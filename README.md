@@ -16,4 +16,4 @@
 ![editCity1](https://user-images.githubusercontent.com/97358392/192131100-9c33b1cb-d8f3-4b45-b5a8-e630ee07d179.png)
 ![addHotel](https://user-images.githubusercontent.com/97358392/192131156-ca5f06e0-074c-44f2-a28a-78f16b92bf22.png)
 ![editHotel](https://user-images.githubusercontent.com/97358392/192131172-ebdf719a-d351-40dc-bc5a-1abcec7f06c1.png)
-
+![addHotel1](https://user-images.githubusercontent.com/97358392/192131258-2baa6c84-6652-408f-9342-a8f6070ee888.png)
