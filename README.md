@@ -3,9 +3,7 @@
 A new Flutter project.
 
 ## Getting Started
-![SplahScren](https://user-images.githubusercontent.com/97358392/192129958-866d571d-ef59-4665-b6c5-979aa0bbb003.png:height: 100px
-   :width: 200 px
-   :scale: 50 %)
+![SplahScren](https://user-images.githubusercontent.com/97358392/192129958-866d571d-ef59-4665-b6c5-979aa0bbb003.png:height: 100px:width: 200 px:scale: 50 %)
 
 
 This project is a starting point for a Flutter application.
