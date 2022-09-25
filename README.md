@@ -1,6 +1,6 @@
 # app_booking
 Mô tả dự án:
-- Ứng dụng đặt phòng khách sạn
+- Tên dự án: Ứng dụng đặt phòng khách sạn
 - Chức năng cho người dùng: Đăng ký, Đăng nhập, ghi nhớ đăng nhập, đặt phòng, xem lịch sử đặt phòng, chỉnh sửa thông tin.
 - Chức năng cho admin: CRUD khách sạn, địa điểm, và có thể sử dụng tất cả chức năng của User.
 - Công nghệ sử dụng: Flutter, Firebase.
