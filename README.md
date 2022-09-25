@@ -4,4 +4,11 @@
 ![signin1](https://user-images.githubusercontent.com/97358392/192130513-efc47d70-d53d-4b10-82be-60a22ea12457.png)
 ![homepage](https://user-images.githubusercontent.com/97358392/192130629-2f5fe41f-b80c-4ce4-9d3e-3de1133f5714.png)
 ![denestionscreen1](https://user-images.githubusercontent.com/97358392/192130642-feac837d-ae48-4e04-a152-72cec42e741a.png)
+![allCity1](https://user-images.githubusercontent.com/97358392/192130734-b966e34e-f455-4ed5-acd8-d79faad3edc8.png)
+![all_Hotel1](https://user-images.githubusercontent.com/97358392/192130738-f50e7076-0c53-4d77-aa2f-22a2994490a8.png)
+![bookscreeen1](https://user-images.githubusercontent.com/97358392/192130743-9697e0ca-e712-408d-a353-77afe2500001.png)
+![account1](https://user-images.githubusercontent.com/97358392/192130744-afb4b325-a71f-43aa-a090-2fb3172a6b2a.png)
+![editaccount1](https://user-images.githubusercontent.com/97358392/192130747-3462977e-f4ad-446d-84d0-fa50fbd881fa.png)
+![historybook1](https://user-images.githubusercontent.com/97358392/192130769-fefdad7e-8aed-4ea1-9ac7-5ae5315e37b6.png)
+
 
