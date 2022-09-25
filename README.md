@@ -10,5 +10,10 @@
 ![account1](https://user-images.githubusercontent.com/97358392/192130744-afb4b325-a71f-43aa-a090-2fb3172a6b2a.png)
 ![editaccount1](https://user-images.githubusercontent.com/97358392/192130747-3462977e-f4ad-446d-84d0-fa50fbd881fa.png)
 ![historybook1](https://user-images.githubusercontent.com/97358392/192130769-fefdad7e-8aed-4ea1-9ac7-5ae5315e37b6.png)
-
+![homepageadmin1](https://user-images.githubusercontent.com/97358392/192131066-5f7b7d6c-03c3-4294-bcd6-4f6538d2a1b8.png)
+![editfamousHote1l](https://user-images.githubusercontent.com/97358392/192131068-5842b9b7-457f-457b-ae0c-d6d9d2d997db.png)
+![allCityadmin1](https://user-images.githubusercontent.com/97358392/192131079-a90a0d81-cf98-4848-8c84-19f10c7034c6.png)
+![editCity1](https://user-images.githubusercontent.com/97358392/192131100-9c33b1cb-d8f3-4b45-b5a8-e630ee07d179.png)
+![addHotel](https://user-images.githubusercontent.com/97358392/192131156-ca5f06e0-074c-44f2-a28a-78f16b92bf22.png)
+![editHotel](https://user-images.githubusercontent.com/97358392/192131172-ebdf719a-d351-40dc-bc5a-1abcec7f06c1.png)
 
