@@ -16,3 +16,4 @@
 ![allCityadmin1](https://user-images.githubusercontent.com/97358392/192131079-a90a0d81-cf98-4848-8c84-19f10c7034c6.png)
 ![editCity1](https://user-images.githubusercontent.com/97358392/192131100-9c33b1cb-d8f3-4b45-b5a8-e630ee07d179.png)
 ![addHotel1](https://user-images.githubusercontent.com/97358392/192131258-2baa6c84-6652-408f-9342-a8f6070ee888.png)
+![editHotel12](https://user-images.githubusercontent.com/97358392/192131391-807c82d1-df33-427f-96ad-3c2f64874e74.png)
