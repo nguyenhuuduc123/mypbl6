@@ -4,7 +4,7 @@ Mô tả dự án:
 - Công nghệ sử dụng: Flutter, Firebase.
 - Chức năng cho người dùng: Đăng ký, Đăng nhập, ghi nhớ đăng nhập, đặt phòng, xem lịch sử đặt phòng, chỉnh sửa thông tin.
 - Chức năng cho admin: CRUD khách sạn, địa điểm, và có thể sử dụng tất cả chức năng của User.
-
+Màn hình của user:
 ![SplahScreen](https://user-images.githubusercontent.com/97358392/192130610-ea6526ab-5e2b-4dc7-8056-69b73d7ac747.png)
 ![login](https://user-images.githubusercontent.com/97358392/192130224-27284d92-f6c2-474e-852a-0f52356fec41.png)
 ![signin1](https://user-images.githubusercontent.com/97358392/192130513-efc47d70-d53d-4b10-82be-60a22ea12457.png)
