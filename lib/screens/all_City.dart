@@ -20,6 +20,7 @@ class all_City extends StatefulWidget {
 class _all_CityState extends State<all_City> {
   final _auth = FirebaseAuth.instance;
   late User loggedInUser;
+  @override
   void initState() {
     super.initState();
     getCurrentUser();

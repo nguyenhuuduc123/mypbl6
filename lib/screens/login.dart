@@ -132,32 +132,34 @@ class _LoginState extends State<Login>{
                           borderRadius: BorderRadius.circular(10),
                           color: Colors.grey.shade600,
                         ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text('Nhớ tài khoản',style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18
-                            ),),
-                            Checkbox(
-                                activeColor: Colors.blueGrey,
-                                checkColor: Colors.white,
-                                focusColor: Colors.white,
-                                value: showSpinner,
-                                onChanged: (value) {
-                                  setState((){
-                                    showSpinner = value;
-                                    print(showSpinner);
-                                  });
-                                }
-                            ),
-                            // Text('Quên mật khẩu',
-                            //   style: TextStyle(
-                            //       fontWeight: FontWeight.bold,
-                            //       color: Colors.white,
-                            //       fontSize: 18),),
-                          ],
+                        child: SingleChildScrollView(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text('Nhớ tài khoản',style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18
+                              ),),
+                              Checkbox(
+                                  activeColor: Colors.blueGrey,
+                                  checkColor: Colors.white,
+                                  focusColor: Colors.white,
+                                  value: showSpinner,
+                                  onChanged: (value) {
+                                    setState((){
+                                      showSpinner = value;
+                                      print(showSpinner);
+                                    });
+                                  }
+                              ),
+                              // Text('Quên mật khẩu',
+                              //   style: TextStyle(
+                              //       fontWeight: FontWeight.bold,
+                              //       color: Colors.white,
+                              //       fontSize: 18),),
+                            ],
+                          ),
                         ),
                       ),
                       SizedBox(height: 10,),

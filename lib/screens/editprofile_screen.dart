@@ -99,104 +99,106 @@ class _editProfile_ScreenState extends State<editProfile_Screen> {
             child: SingleChildScrollView(
               child: Padding(
           padding: EdgeInsets.all(20),
-          child: Column(
-              children: [
-                avatarImage == null ?
-                Container(
-                  height: MediaQuery.of(context).size.height * 0.3,
-                  width: MediaQuery.of(context).size.width,
-                  child: Column(
-                    children: [
-                      CircleAvatar(
-                        radius: 92,
-                        backgroundColor: Colors.blueGrey,
-                        child: CircleAvatar(
-                          backgroundImage: NetworkImage("${loggedInUser.avatar}"),
-                          radius: 90,
-                          // backgroundColor: ,
-                        ),
-                      ),
-                      SizedBox(height: 10,),
-                      GestureDetector(
-                        onTap: uploadImage,
-                        child: Container(
-                          alignment: Alignment.center,
-                          height: 50,
-                          width: 150,
-                          decoration: BoxDecoration(
-                            color: Colors.blueGrey.shade700,
-                            borderRadius: BorderRadius.circular(10),
+          child: SingleChildScrollView(
+            child: Column(
+                children: [
+                  avatarImage == null ?
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.3,
+                    width: MediaQuery.of(context).size.width,
+                    child: Column(
+                      children: [
+                        CircleAvatar(
+                          radius: 92,
+                          backgroundColor: Colors.blueGrey,
+                          child: CircleAvatar(
+                            backgroundImage: NetworkImage("${loggedInUser.avatar}"),
+                            radius: 90,
+                            // backgroundColor: ,
                           ),
-                          child: Text('Thay Đổi Ảnh', style: TextStyle(
-                            fontSize: 18,
-                            fontFamily: 'Vollkorn',
-                            color: Colors.white,
-                          ), ),
                         ),
-                      )
-                    ],
+                     const   SizedBox(height: 10,),
+                        GestureDetector(
+                          onTap: uploadImage,
+                          child: Container(
+                            alignment: Alignment.center,
+                            height: 50,
+                            width: 150,
+                            decoration: BoxDecoration(
+                              color: Colors.blueGrey.shade700,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Text('Thay Đổi Ảnh', style: TextStyle(
+                              fontSize: 18,
+                              fontFamily: 'Vollkorn',
+                              color: Colors.white,
+                            ), ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ) :
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.3,
+                    width: MediaQuery.of(context).size.width,
+                    child: Column(
+                      children: [
+                        CircleAvatar(
+                          radius: 92,
+                          backgroundColor: Colors.blueGrey,
+                          child: CircleAvatar(
+                            backgroundImage: NetworkImage(avatarImage!),
+                            radius: 90,
+                            // backgroundColor: ,
+                          ),
+                        ),
+                       const SizedBox(height: 10,),
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Container(
+                            alignment: Alignment.center,
+                            height: 50,
+                            width: 150,
+                            color: Colors.blueGrey.shade700,
+                            child: Text('Thay Đổi Ảnh', style: TextStyle(
+                              fontSize: 18,
+                              fontFamily: 'Vollkorn',
+                              color: Colors.white,
+                            ), ),
+                          ),
+                        )
+                      ],
+                    ),
                   ),
-                ) :
-                Container(
-                  height: MediaQuery.of(context).size.height * 0.3,
-                  width: MediaQuery.of(context).size.width,
-                  child: Column(
-                    children: [
-                      CircleAvatar(
-                        radius: 92,
-                        backgroundColor: Colors.blueGrey,
-                        child: CircleAvatar(
-                          backgroundImage: NetworkImage(avatarImage!),
-                          radius: 90,
-                          // backgroundColor: ,
-                        ),
+                  SizedBox(height: 30),
+                  TextField(
+                    controller: _userNameController,
+                    decoration: const InputDecoration(
+                      prefixIcon: Icon(FontAwesomeIcons.userTie),
+          
+                      contentPadding: const EdgeInsets.fromLTRB(20, 25, 20, 15),
+                      border: OutlineInputBorder(
                       ),
-                      SizedBox(height: 10,),
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10),
-                        child: Container(
-                          alignment: Alignment.center,
-                          height: 50,
-                          width: 150,
-                          color: Colors.blueGrey.shade700,
-                          child: Text('Thay Đổi Ảnh', style: TextStyle(
-                            fontSize: 18,
-                            fontFamily: 'Vollkorn',
-                            color: Colors.white,
-                          ), ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                SizedBox(height: 30),
-                TextField(
-                  controller: _userNameController,
-                  decoration: const InputDecoration(
-                    prefixIcon: Icon(FontAwesomeIcons.userTie),
-
-                    contentPadding: const EdgeInsets.fromLTRB(20, 25, 20, 15),
-                    border: OutlineInputBorder(
                     ),
                   ),
-                ),
-                SizedBox(height: 20,),
-                TextField(
-                  controller: _phoneNumberController,
-                  decoration: const InputDecoration(
-                    prefixIcon: Icon(FontAwesomeIcons.phone),
-                    contentPadding: const EdgeInsets.fromLTRB(20, 25, 20, 15),
-                    border: OutlineInputBorder(
+                  SizedBox(height: 20,),
+                  TextField(
+                    controller: _phoneNumberController,
+                    decoration: const InputDecoration(
+                      prefixIcon: Icon(FontAwesomeIcons.phone),
+                      contentPadding: const EdgeInsets.fromLTRB(20, 25, 20, 15),
+                      border: OutlineInputBorder(
+                      ),
                     ),
                   ),
-                ),
-                SizedBox(height: 20,),
-                RoundeButton(
-                  onPressed: updateProfile,
-                  color: Colors.blueGrey,
-                  title: 'CẬP NHẬT THÔNG TIN',
-                ),
-              ],
+                  SizedBox(height: 20,),
+                  RoundeButton(
+                    onPressed: updateProfile,
+                    color: Colors.blueGrey,
+                    title: 'CẬP NHẬT THÔNG TIN',
+                  ),
+                ],
+            ),
           ),
         ),
             ))
