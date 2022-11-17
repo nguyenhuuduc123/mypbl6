@@ -1,12 +1,10 @@
-import 'package:app_booking/screens/addCityAll.dart';
 import 'package:app_booking/screens/editCity.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_storage/firebase_storage.dart';
-import '../screens/destination_screen.dart';
+
+import 'addCityAll.dart';
 import 'allHotel_Screen.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -41,7 +39,7 @@ class _all_CityState extends State<all_City> {
   Future<void> delete(String cityID) async {
     await _allCity.doc(cityID).delete();
     EasyLoading.showSuccess('Xóa thành công!',
-      duration: Duration(milliseconds: 1300),
+      duration: const Duration(milliseconds: 1300),
       maskType: EasyLoadingMaskType.black,
     );
   }
@@ -64,10 +62,10 @@ class _all_CityState extends State<all_City> {
             loggedInUser.email == admin ?
             GestureDetector(
               onTap: () => Navigator.push(context, 
-                  MaterialPageRoute(builder: (context) => addCity_Screen())),
-                child: Icon(FontAwesomeIcons.circlePlus,
+                  MaterialPageRoute(builder: (context) => const addCity_Screen())),
+                child: const Icon(FontAwesomeIcons.circlePlus,
                   color: Colors.grey,
-                  size: 35,)) : SizedBox(),
+                  size: 35,)) : const SizedBox(),
           ],
         ),
       ),
@@ -75,13 +73,13 @@ class _all_CityState extends State<all_City> {
         stream: _allCity.snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if(!snapshot.hasData)
-            return SpinKitSquareCircle(
+            return const SpinKitSquareCircle(
             color: Colors.white,
             size: 50.0,
              duration: Duration(milliseconds: 1400),
           );
           return GridView.builder(
-            padding: EdgeInsets.all(15),
+            padding: const EdgeInsets.all(15),
             gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
               maxCrossAxisExtent: width * 0.5,
               crossAxisSpacing: 10,
@@ -106,7 +104,7 @@ class _all_CityState extends State<all_City> {
                             image: DecorationImage(
                               image: NetworkImage(documentSnapshot['imageUrl']),
                               fit: BoxFit.cover,
-                              colorFilter: ColorFilter.mode(Colors.black45, BlendMode.darken),
+                              colorFilter: const ColorFilter.mode(Colors.black45, BlendMode.darken),
                             ),
                         ),
                       ),
@@ -124,9 +122,9 @@ class _all_CityState extends State<all_City> {
                             color: Colors.grey.shade400,
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          child: Icon(FontAwesomeIcons.edit),
+                          child: const Icon(FontAwesomeIcons.edit),
                         ),
-                      ),): SizedBox(),
+                      ),): const SizedBox(),
                     loggedInUser.email == admin ?
                     Positioned(
                       top: 5, right: 5,
@@ -141,16 +139,16 @@ class _all_CityState extends State<all_City> {
                             color: Colors.grey.shade400,
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          child: Icon(FontAwesomeIcons.trashCan),
+                          child: const Icon(FontAwesomeIcons.trashCan),
                         ),
-                      ),): SizedBox(),
+                      ),): const SizedBox(),
                     Padding(
                       padding: const EdgeInsets.all(5.0),
                       child: Row(
                         children: [
-                          SizedBox(width: 5,),
+                          const SizedBox(width: 5,),
                           Text(documentSnapshot['nameCity'],
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 17,
                               color: Colors.white,
                               fontFamily: 'Vollkorn',

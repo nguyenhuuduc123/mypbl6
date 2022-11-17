@@ -22,6 +22,7 @@ class allHotel_Screen extends StatefulWidget {
 class _allHotel_ScreenState extends State<allHotel_Screen> {
   final String admin = "admin@email.com";
   final _auth = FirebaseAuth.instance;
+  @override
   void initState() {
     super.initState();
     getCurrentUser();
@@ -41,7 +42,7 @@ class _allHotel_ScreenState extends State<allHotel_Screen> {
   Future<void> deleteHotel(String hotelID) async {
     await _allHotel.doc(hotelID).delete();
     EasyLoading.showSuccess('Xóa thành công',
-      duration: Duration(milliseconds: 1300),
+      duration: const Duration(milliseconds: 1300),
       maskType: EasyLoadingMaskType.black,
     );
   }
@@ -71,7 +72,7 @@ class _allHotel_ScreenState extends State<allHotel_Screen> {
                 },
                 child: Icon(FontAwesomeIcons.circlePlus,
                   color: Colors.blueGrey.shade800,
-                  size: 30,)): SizedBox(),
+                  size: 30,)): const SizedBox(),
           ],
         ),
       ),
@@ -79,7 +80,7 @@ class _allHotel_ScreenState extends State<allHotel_Screen> {
         stream: FirebaseFirestore.instance.collection('allCity').
         doc(widget.documentSnapshot!.id).collection('allHotel').snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-          if(!snapshot.hasData) return Text('Erorr');
+          if(!snapshot.hasData) return const Text('Erorr');
           return ListView.builder(
               itemCount: snapshot.data!.docs.length,
               itemBuilder: (BuildContext context, int index){
@@ -97,7 +98,7 @@ class _allHotel_ScreenState extends State<allHotel_Screen> {
                           width: width,
                           height: width*0.5,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.only(topRight: Radius.circular(15), topLeft: Radius.circular(15)),
+                            borderRadius: const BorderRadius.only(topRight: Radius.circular(15), topLeft: Radius.circular(15)),
                             image: DecorationImage(
                               image: NetworkImage(document['imageUrl']),
                               fit: BoxFit.cover,
@@ -105,7 +106,7 @@ class _allHotel_ScreenState extends State<allHotel_Screen> {
                           ),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Container(
+                            child: SizedBox(
                               width: width,
                               height: height * 0.05,
                               child: Row(
@@ -123,9 +124,9 @@ class _allHotel_ScreenState extends State<allHotel_Screen> {
                                           color: Colors.grey.shade600,
                                           borderRadius: BorderRadius.circular(10),
                                         ),
-                                        child: Icon(FontAwesomeIcons.edit, color: Colors.white,)),
-                                  ): SizedBox(),
-                                  SizedBox(width: 5,),
+                                        child: const Icon(FontAwesomeIcons.edit, color: Colors.white,)),
+                                  ): const SizedBox(),
+                                  const SizedBox(width: 5,),
                                 ],
                               ),
                             ),
@@ -136,7 +137,7 @@ class _allHotel_ScreenState extends State<allHotel_Screen> {
                           height: width*0.2,
                           decoration: BoxDecoration(
                             color: Colors.blueGrey.shade200,
-                            borderRadius: BorderRadius.only(bottomRight: Radius.circular(15), bottomLeft: Radius.circular(15)),
+                            borderRadius: const BorderRadius.only(bottomRight: Radius.circular(15), bottomLeft: Radius.circular(15)),
                           ),
                           child: Padding(
                             padding: const EdgeInsets.only(left: 20.0),
@@ -144,12 +145,12 @@ class _allHotel_ScreenState extends State<allHotel_Screen> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text(document['nameHotel'], style: TextStyle(
+                                Text(document['nameHotel'], style: const TextStyle(
                                   fontSize: 27,
                                   fontFamily: 'Vollkorn',
                                 ),),
                                 Text('VND ' + document['price'],
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontSize: 25,
                                     fontWeight: FontWeight.w600,
                                   ),

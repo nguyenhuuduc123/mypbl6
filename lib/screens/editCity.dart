@@ -20,6 +20,7 @@ class _editCity_ScreenState extends State<editCity_Screen> {
   String? imageCityUrl;
   final _auth = FirebaseAuth.instance;
   late User loggedInUser;
+  @override
   void initState() {
     super.initState();
     getCurrentUser();
@@ -92,7 +93,7 @@ class _editCity_ScreenState extends State<editCity_Screen> {
                           )
                       ),
                     ),
-                    SizedBox(height: 20,),
+                    const SizedBox(height: 20,),
                     TextField(
                       controller: _nameCityEdittingController,
                       decoration: const InputDecoration(
@@ -102,7 +103,7 @@ class _editCity_ScreenState extends State<editCity_Screen> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 15,),
+                    const SizedBox(height: 15,),
                     Center(
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(10),
@@ -124,7 +125,7 @@ class _editCity_ScreenState extends State<editCity_Screen> {
                                 "nameCity": _nameCity,
                               });
                               EasyLoading.showSuccess('Cập nhật thành công!',
-                                duration: Duration(milliseconds: 1300),
+                                duration: const Duration(milliseconds: 1300),
                                 maskType: EasyLoadingMaskType.black,
                               );
                             }
@@ -137,7 +138,7 @@ class _editCity_ScreenState extends State<editCity_Screen> {
                               });
                               Navigator.of(context).pop();
                               EasyLoading.showSuccess('Cập nhật thành công',
-                                duration: Duration(milliseconds: 1300),
+                                duration: const Duration(milliseconds: 1300),
                                 maskType: EasyLoadingMaskType.black,
                               );
                             }
@@ -151,7 +152,7 @@ class _editCity_ScreenState extends State<editCity_Screen> {
               ),
             );
           }
-          return Center(child: Text('Erorr'));
+          return const Center(child: Text('Erorr'));
         },
       ),
     );

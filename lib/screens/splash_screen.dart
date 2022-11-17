@@ -81,8 +81,8 @@ class _SplashScreenState extends State<SplashScreen> {
                                 ScaleAnimatedText(
                                   'XIN CHÀO !\n $finalEmail',
                                   textAlign: TextAlign.center,
-                                  duration: Duration(milliseconds: 2400),
-                                  textStyle: TextStyle(
+                                  duration: const Duration(milliseconds: 2400),
+                                  textStyle: const TextStyle(
                                     fontSize: 30,
                                   ),
                                 )

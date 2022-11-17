@@ -1,11 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:app_booking/screens/navbar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../component/button.dart';
 import '../component/contrast.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import '../model/user_model.dart';
 import 'gegister.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -32,19 +32,19 @@ class _LoginState extends State<Login>{
   login(){
     googleSignIn.signIn();
   }
-  // createUserInFirestore() async {
-  //   login();
-  //   final GoogleSignInAccount user = googleSignIn.currentUser!;
-  //   DocumentSnapshot documentSnapshot = await usersRef.doc(user.id).get();
-  //     // 3) get username from create account, use it to make new user document in users collection
-  //     usersRef.doc(user.id).set({
-  //       "uid": user.id,
-  //       "username": user.displayName,
-  //       "photoUrl": user.photoUrl,
-  //       "email": user.email,
-  //     });
-  //   // documentSnapshot = await usersRef.doc(user.id).get();
-  //   }
+  createUserInFirestore() async {
+    login();
+    final GoogleSignInAccount user = googleSignIn.currentUser!;
+    DocumentSnapshot documentSnapshot = await usersRef.doc(user.id).get();
+      // 3) get username from create account, use it to make new user document in users collection
+      usersRef.doc(user.id).set({
+        "uid": user.id,
+        "username": user.displayName,
+        "photoUrl": user.photoUrl,
+        "email": user.email,
+      });
+    // documentSnapshot = await usersRef.doc(user.id).get();
+    }
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +67,7 @@ class _LoginState extends State<Login>{
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Flexible(
+                  const Flexible(
                     child: Center(
                       child: Text(
                         'CHÀO MỪNG BẠN TRỞ LẠI,', style: TextStyle(
@@ -86,7 +86,7 @@ class _LoginState extends State<Login>{
                         controller: emailController,
                         keyboardType: TextInputType.emailAddress,
                         textAlign: TextAlign.start,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 18,
                         ),
@@ -139,7 +139,7 @@ class _LoginState extends State<Login>{
                               Text('Nhớ tài khoản',style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 18
+                                  fontSize: 14
                               ),),
                               Checkbox(
                                   activeColor: Colors.blueGrey,
@@ -188,9 +188,7 @@ class _LoginState extends State<Login>{
                                 maskType: EasyLoadingMaskType.black,
                               );
                             }
-                            // setState(() async {
-                            //   showSpinner = false;
-                            // });
+                            
                           }catch(e) {
                             EasyLoading.showError('Sai tài khoản hoặc mật khẩu!',
                               duration: Duration(milliseconds: 1300),
@@ -199,15 +197,15 @@ class _LoginState extends State<Login>{
                           }
                          },
                       ),
-                      // RoundeButton(
-                      //   title: 'Login with Google',
-                      //   color: Colors.lightBlue,
-                      //   onPressed: () {
-                      //       //  createUserInFirestore();
-                      //       // Navigator.pushNamed(context, NavbarScreen.id);
-                      //       // print(email);
-                      //   },
-                      // ),
+                      RoundeButton(
+                        title: 'Login with Google',
+                        color: Colors.lightBlue,
+                        onPressed: () {
+                             createUserInFirestore();
+                            Navigator.pushNamed(context, NavbarScreen.id);
+                            print(email);
+                        },
+                      ),
                     ],
                   ),
                   SizedBox(height: 15,),
@@ -238,27 +236,27 @@ class _LoginState extends State<Login>{
         ],
       );
   }
-  // Future<UserCredential> signInWithGoogle() async {
-  //   // Trigger the authentication flow
-  //   final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-  //   // Obtain the auth details from the request
-  //   final GoogleSignInAuthentication? googleAuth = await googleUser!.authentication;
-  //
-  //   // Create a new credential
-  //   final credential = GoogleAuthProvider.credential(
-  //     accessToken: googleAuth?.accessToken,
-  //     idToken: googleAuth?.idToken,
-  //   );
-  //   FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
-  //   UserModel userModel = UserModel();
-  //   userModel.email = googleUser.email;
-  //   userModel.uid = googleUser.id;
-  //   userModel.userName = googleUser.displayName;
-  //   // userModel.phoneNumber = phoneNumberEdittingController.text;
-  //   userModel.avatar = googleUser.photoUrl;
-  //   await firebaseFirestore.collection("users").doc(userModel.uid).set(userModel.toMap());
-  //   // Once signed in, return the UserCredential
-  //   print(googleAuth);
-  //   return await FirebaseAuth.instance.signInWithCredential(credential);
-  // }
+  Future<UserCredential> signInWithGoogle() async {
+    // Trigger the authentication flow
+    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+    // Obtain the auth details from the request
+    final GoogleSignInAuthentication? googleAuth = await googleUser!.authentication;
+  
+    // Create a new credential
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth?.accessToken,
+      idToken: googleAuth?.idToken,
+    );
+    FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
+    UserModel userModel = UserModel();
+    userModel.email = googleUser.email;
+    userModel.uid = googleUser.id;
+    userModel.userName = googleUser.displayName;
+    // userModel.phoneNumber = phoneNumberEdittingController.text;
+    userModel.avatar = googleUser.photoUrl;
+    await firebaseFirestore.collection("users").doc(userModel.uid).set(userModel.toMap());
+    // Once signed in, return the UserCredential
+    print(googleAuth);
+    return await FirebaseAuth.instance.signInWithCredential(credential);
+  }
 }

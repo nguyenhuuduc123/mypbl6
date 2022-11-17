@@ -2,10 +2,6 @@ import 'package:app_booking/component/app_large_text.dart';
 import 'package:app_booking/component/responsive_button.dart';
 import 'package:app_booking/component/text_app.dart';
 import 'package:flutter/material.dart';
-import 'package:animated_text_kit/animated_text_kit.dart';
-import '../../component/button.dart';
-import 'gegister.dart';
-import 'login.dart';
 
 class Welcome extends StatefulWidget{
   const Welcome({Key? key}) :super(key: key);
@@ -73,7 +69,7 @@ class _WelComeState extends State<Welcome> with SingleTickerProviderStateMixin{
                )
              ),
              child: Container(
-               margin: EdgeInsets.only(top: 110, left: 20, right: 20),
+               margin: const EdgeInsets.only(top: 110, left: 20, right: 20),
                child: Row(
                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                  children: [
@@ -82,15 +78,15 @@ class _WelComeState extends State<Welcome> with SingleTickerProviderStateMixin{
                      children: [
                        AppLargeText(text: textName[index]),
                        AppText(text: textAddress[index],color: Colors.black87, size: 25,),
-                       SizedBox(height: 18,),
-                       Container(
+                       const SizedBox(height: 18,),
+                       SizedBox(
                          width: 250,
                          child: AppText(
                            text: textDiscription[index],
                            color: Colors.black87,
                          ),
                        ),
-                       SizedBox(height: 36,),
+                       const SizedBox(height: 36,),
                        ResponsiveButton(),
                      ],
                    ),
@@ -98,7 +94,7 @@ class _WelComeState extends State<Welcome> with SingleTickerProviderStateMixin{
                    Column(
                      children: List.generate(3, (indexDots){
                        return Container(
-                         margin: EdgeInsets.only(bottom: 4),
+                         margin: const EdgeInsets.only(bottom: 4),
                          width: 10,
                          height: index == indexDots?30:8,
                          decoration: BoxDecoration(

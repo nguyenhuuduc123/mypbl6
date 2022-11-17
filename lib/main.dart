@@ -27,17 +27,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       builder: EasyLoading.init(),
       initialRoute: SplashScreen.id,
+      debugShowCheckedModeBanner: false,
       routes: {
         Welcome.id: (context) => const Welcome(),
         Login.id: (context) => const Login(),
         Register.id: (context) => const Register(),
-        SplashScreen.id: (context) => SplashScreen(),
-        location_Screen.id: (context) => location_Screen(),
-        NavbarScreen.id: (context) => NavbarScreen(),
-        AccountScreen.id: (context) => AccountScreen(),
-        addfamousHotel_Screen.id: (context) => addfamousHotel_Screen(),
+        SplashScreen.id: (context) => const SplashScreen(),
+        location_Screen.id: (context) => const location_Screen(),
+        NavbarScreen.id: (context) => const NavbarScreen(),
+        AccountScreen.id: (context) => const AccountScreen(),
+        addfamousHotel_Screen.id: (context) => const addfamousHotel_Screen(),
         HomeScreen.id: (context) => HomeScreen(),
-        myorder_Screen.id: (context) => myorder_Screen(),
+        myorder_Screen.id: (context) => const myorder_Screen(),
       },
     );
   }

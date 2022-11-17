@@ -71,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<void> deleteHotel(String hotelID) async {
     await _famousHotel.doc(hotelID).delete();
     EasyLoading.showSuccess('Xóa thành công!',
-      duration: Duration(milliseconds: 1300),
+      duration: const Duration(milliseconds: 1300),
       maskType: EasyLoadingMaskType.black,
     );
   }
@@ -94,18 +94,18 @@ class _HomeScreenState extends State<HomeScreen> {
                           width: MediaQuery.of(context).size.width,
                           height: MediaQuery.of(context).size.width,
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.only(bottomRight: Radius.circular(25), bottomLeft: Radius.circular(25)),
+                              borderRadius: const BorderRadius.only(bottomRight: Radius.circular(25), bottomLeft: Radius.circular(25)),
                               image: DecorationImage(
                                 image: AssetImage(
                                   "lib/asset/images_welcome/" + images[index],
                                 ),
                                 fit: BoxFit.cover,
-                                  colorFilter: ColorFilter.mode(Colors.black45, BlendMode.darken),
+                                  colorFilter: const ColorFilter.mode(Colors.black45, BlendMode.darken),
                               )
                           ),
                           child: Container(
                             alignment: Alignment.bottomLeft,
-                            padding: EdgeInsets.only(top: 250, left: 20, right: 20),
+                            padding: const EdgeInsets.only(top: 250, left: 20, right: 20),
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.end,
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -117,8 +117,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                     AppLargeText(text: textName[index], color: Colors.white,),
                                     Row(
                                       children: [
-                                        Icon(FontAwesomeIcons.locationArrow, color: Colors.white,),
-                                        SizedBox(width: 10,),
+                                        const Icon(FontAwesomeIcons.locationArrow, color: Colors.white,),
+                                        const SizedBox(width: 10,),
                                         AppText(text: textAddress[index],color: Colors.white70, size: 25,),
                                       ],
                                     ),
@@ -135,7 +135,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         height: 430,
                         viewportFraction: 1,
                         autoPlay: true,
-                        autoPlayInterval: Duration(seconds: 4),
+                        autoPlayInterval: const Duration(seconds: 4),
                         onPageChanged: (index, reason) {
                           setState(() {
                             activeIndex = index;
@@ -149,7 +149,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: AnimatedSmoothIndicator(
                       activeIndex: activeIndex,
                       count: images.length,
-                      effect: WormEffect(
+                      effect: const WormEffect(
                       ),
                     ),
                   ),
@@ -157,7 +157,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Padding(
                   padding: const EdgeInsets.only(top: 90, left: 20, right: 20),
                   child: TextField(
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Colors.black,
                         fontSize: 20,
                     ),
@@ -165,10 +165,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         MaterialPageRoute(builder: (context) => SearchScreen())),
                     decoration: kTextFieldDecoration.copyWith(
                       fillColor: Colors.white70,
-                      contentPadding: EdgeInsetsDirectional.fromSTEB(16, 18, 0, 18),
-                      prefixIcon: Icon(FontAwesomeIcons.search, color: Colors.green,),
+                      contentPadding: const EdgeInsetsDirectional.fromSTEB(16, 18, 0, 18),
+                      prefixIcon: const Icon(FontAwesomeIcons.search, color: Colors.green,),
                       hintText: 'Tìm khách sạn, nhà nghỉ...',
-                      hintStyle: TextStyle(
+                      hintStyle: const TextStyle(
                         color: Colors.black,
                         fontSize: 20
                       ),
@@ -184,8 +184,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 10),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 10),
                         child: Text('Khách sạn nổi bật', style: TextStyle(
                             color: Colors.black,
                             fontSize: 20,
@@ -205,15 +205,15 @@ class _HomeScreenState extends State<HomeScreen> {
                               color: Colors.grey,
                               borderRadius: BorderRadius.circular(5),
                             ),
-                            child: Text('Thêm Hotel', style: TextStyle(
+                            child: const Text('Thêm Hotel', style: TextStyle(
                               color: Colors.black,
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
                             ),),
                           ),
                         ),
-                      ) : Padding(
-                        padding: const EdgeInsets.only(right: 15, bottom: 10),
+                      ) : const Padding(
+                        padding: EdgeInsets.only(right: 15, bottom: 10),
                         child: Text('Xem tất cả', style: TextStyle(
                             color: Colors.black,
                             fontSize: 20,
@@ -223,7 +223,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                   Container(
-                    padding: EdgeInsets.only(top: 10),
+                    padding: const EdgeInsets.only(top: 10),
                     height: 350,
                     child: StreamBuilder(
                       stream: _famousHotel.snapshots(),
@@ -240,7 +240,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 MaterialPageRoute(builder:(context) =>
                                     DestinationScreen(documentSnapshot: documentSnapshot,),),),
                               child: Container(
-                                margin: EdgeInsets.only(left: 10, right: 15),
+                                margin: const EdgeInsets.only(left: 10, right: 15),
                                 width: 230,
                                 child: Stack(
                                   alignment: Alignment.topCenter,
@@ -254,30 +254,30 @@ class _HomeScreenState extends State<HomeScreen> {
                                           color: Colors.blueGrey.shade200,
                                         ),
                                         child: Padding(
-                                          padding:  EdgeInsets.only(left: 10, bottom: 8),
+                                          padding:  const EdgeInsets.only(left: 10, bottom: 8),
                                           child: Column(
                                             mainAxisAlignment: MainAxisAlignment.end,
                                             crossAxisAlignment: CrossAxisAlignment.start,
                                             children: [
-                                              Text(documentSnapshot['nameHotel'], style: TextStyle(
+                                              Text(documentSnapshot['nameHotel'], style: const TextStyle(
                                                 fontSize: 18,
                                                 fontWeight: FontWeight.w600,
                                                 letterSpacing: 0.8,
                                               ),),
-                                              SizedBox(height: 5,),
-                                              Text('Giá: '+ documentSnapshot['price'], style: TextStyle(
+                                              const SizedBox(height: 5,),
+                                              Text('Giá: '+ documentSnapshot['price'], style: const TextStyle(
                                                 color: Colors.black,
                                                 fontSize: 18,
                                               ),),
                                               Row(
                                                 children: [
-                                                  Text('Nhận: ' + documentSnapshot['checkIn'], style: TextStyle(
+                                                  Text('Nhận: ' + documentSnapshot['checkIn'], style: const TextStyle(
                                                     color: Colors.black,
                                                     fontSize: 18,
                                                     fontWeight: FontWeight.bold,
                                                   ),),
-                                                  SizedBox(width: 10,),
-                                                  Text('Trả: ' + documentSnapshot['checkOut'], style: TextStyle(
+                                                  const SizedBox(width: 10,),
+                                                  Text('Trả: ' + documentSnapshot['checkOut'], style: const TextStyle(
                                                     color: Colors.black,
                                                     fontSize: 18,
                                                     fontWeight: FontWeight.bold,
@@ -295,7 +295,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         color: Colors.white,
                                         borderRadius: BorderRadius.circular(20),
                                         boxShadow: [
-                                          BoxShadow(
+                                          const BoxShadow(
                                             color: Colors.black26,
                                             offset: Offset(0.0, 0.2),
                                             blurRadius: 6.0,
@@ -313,7 +313,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   image: NetworkImage(documentSnapshot['imageUrl'],
                                                   ),
                                                   fit: BoxFit.cover,
-                                                  colorFilter: ColorFilter.mode(Colors.black26, BlendMode.darken),
+                                                  colorFilter: const ColorFilter.mode(Colors.black26, BlendMode.darken),
                                                 )
                                             ),
                                           ),
@@ -325,12 +325,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                               onTap: () => Navigator.push(context,
                                                 MaterialPageRoute(builder:(context) =>
                                                     edifamousHotel_Screen(documentSnapshot),),),
-                                              child: CircleAvatar(
+                                              child: const CircleAvatar(
                                                 backgroundColor: Colors.grey,
                                                 child: Icon(FontAwesomeIcons.edit, color: Colors.white,),
                                               ),
                                             ),
-                                          ): SizedBox(),
+                                          ): const SizedBox(),
                                           currentuser == admin ?
                                           Positioned(
                                             top: 3,
@@ -339,21 +339,21 @@ class _HomeScreenState extends State<HomeScreen> {
                                               onTap: (){
                                                 deleteHotel(documentSnapshot.id);
                                               },
-                                              child: CircleAvatar(
+                                              child: const CircleAvatar(
                                                 backgroundColor: Colors.grey,
                                                 child: Icon(FontAwesomeIcons.trash, color: Colors.white,),
                                               ),
                                             ),
-                                          ): SizedBox(),
+                                          ): const SizedBox(),
                                           Positioned(
                                             left: 11.0,
                                             bottom:14,
                                             child: Row(
                                               crossAxisAlignment : CrossAxisAlignment.start,
                                               children: [
-                                                Icon(FontAwesomeIcons.locationArrow, size: 15, color: Colors.white,),
-                                                SizedBox(width: 5,),
-                                                Text(documentSnapshot['nameCity'], style: TextStyle(
+                                                const Icon(FontAwesomeIcons.locationArrow, size: 15, color: Colors.white,),
+                                                const SizedBox(width: 5,),
+                                                Text(documentSnapshot['nameCity'], style: const TextStyle(
                                                     color: Colors.white,
                                                     fontSize: 20,
                                                     fontWeight: FontWeight.w600,
